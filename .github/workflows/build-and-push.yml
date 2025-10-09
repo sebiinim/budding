@@ -30,7 +30,7 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: |
-            ghcr.io/${{ github.repository_owner }}/2025f-SWE-Team6:latest
-            ghcr.io/${{ github.repository_owner }}/2025f-SWE-Team6:${{ github.sha }}
-          cache-from: type=registry,ref=ghcr.io/${{ github.repository_owner }}/2025f-SWE-Team6:cache
-          cache-to: type=registry,ref=ghcr.io/${{ github.repository_owner }}/2025f-SWE-Team6:cache,mode=max
+            ghcr.io/${{ github.repository_owner }}/2025f-swe-team6:latest
+            ghcr.io/${{ github.repository_owner }}/2025f-swe-team6:${{ github.sha }}
+          cache-from: type=registry,ref=ghcr.io/${{ github.repository_owner }}/2025f-swe-team6:cache
+          cache-to: type=registry,ref=ghcr.io/${{ github.repository_owner }}/2025f-swe-team6:cache,mode=max
