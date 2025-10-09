@@ -1,21 +1,20 @@
 # ---- builder ----
 FROM gradle:8.10-jdk17 AS builder
 WORKDIR /app
+
 COPY gradlew ./
 COPY gradle gradle
 COPY build.gradle.kts settings.gradle.kts ./
-# 의존성 캐시 레이어
-RUN ./gradlew --no-daemon dependencies || true
-# 소스는 나중에
-COPY src src
-# 배포 빌드: 테스트 제외
-RUN ./gradlew --no-daemon clean bootJar -x test
+RUN chmod +x gradlew
 
-# ---- runtime ----
-FROM eclipse-temurin:17-jre-alpine
-WORKDIR /app
-COPY --from=builder /app/build/libs/*.jar /app/app.jar
-ENV JAVA_OPTS="-XX:+UseContainerSupport"
-# Spring Boot는 기본 8080 사용(필요시 SERVER_PORT env로 바꾸면 됨)
-EXPOSE 8080
-ENTRYPOINT ["sh","-c","java $JAVA_OPTS -jar /app/app.jar"]
+# 1) Gradle wrapper 동작 확인
+RUN ./gradlew --version
+
+# 2) 의존성 레이어 캐시 (실패해도 계속 진행)
+RUN ./gradlew --no-daemon dependencies --stacktrace --info || true
+
+# 3) 소스 복사
+COPY src src
+
+# 4) 진짜 빌드 (여기에 자세한 로그 옵션 추가)
+RUN ./gradlew --no-daemon clean bootJar -x test --stacktrace --info
