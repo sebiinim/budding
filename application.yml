@@ -1,0 +1,17 @@
+server:
+  port: ${PORT:8080}
+
+
+spring:
+  datasource:
+    url: jdbc:postgresql://aws-1-ap-southeast-1.pooler.supabase.com:6543/postgres?sslmode=require
+    username: postgres.xhjfxoovyccyxthwfhgc
+    password: sebin
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+        jdbc:
+          tiime_zone: UTC
