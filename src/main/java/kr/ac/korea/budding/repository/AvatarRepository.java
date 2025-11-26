@@ -8,6 +8,6 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 
 @Repository
-public interface AvatarRepository extends JpaRepository<AvatarEntity,Integer> {
+public interface AvatarRepository extends JpaRepository<AvatarEntity, Long> {
 //    Optional<AvatarEntity> findByUser(UserEntity user);
 }

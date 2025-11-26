@@ -9,8 +9,8 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface ParticipationRepository extends JpaRepository<ParticipationEntity, Integer> {
-    List<ParticipationEntity> findByUserId(Integer userId);
+public interface ParticipationRepository extends JpaRepository<ParticipationEntity, Long> {
+    List<ParticipationEntity> findByUserId(Long userId);
 
-    List<ParticipationEntity> findByUserIdAndStatus(Integer userId, ParticipationStatus status);
+    List<ParticipationEntity> findByUserIdAndStatus(Long userId, ParticipationStatus status);
 }

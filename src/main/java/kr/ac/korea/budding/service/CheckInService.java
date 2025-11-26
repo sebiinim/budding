@@ -20,7 +20,7 @@ public class CheckInService {
     private final CheckInMapper checkInMapper;
     
     // 출석 체크
-    public CheckInResponseDto checkIn(Integer userId) {
+    public CheckInResponseDto checkIn(Long userId) {
 
         LocalDate date = LocalDate.now();
 
@@ -47,7 +47,7 @@ public class CheckInService {
     }
 
     // 오늘 출석했는지 확인
-    public Boolean IscheckIn(Integer userId) {
+    public Boolean IscheckIn(Long userId) {
         LocalDate date = LocalDate.now();
 
         // 유저가 있는지 확인

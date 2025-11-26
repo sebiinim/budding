@@ -7,8 +7,8 @@ import org.springframework.stereotype.Repository;
 import java.time.LocalDate;
 
 @Repository
-public interface CheckInRepository extends JpaRepository<CheckInEntity, Integer> {
-    CheckInEntity findByUserIdAndDate(Integer userId, LocalDate date);
+public interface CheckInRepository extends JpaRepository<CheckInEntity, Long> {
+    CheckInEntity findByUserIdAndDate(Long userId, LocalDate date);
 
-    Boolean existsByUserIdAndDate(Integer userId, LocalDate date);
+    Boolean existsByUserIdAndDate(Long userId, LocalDate date);
 }

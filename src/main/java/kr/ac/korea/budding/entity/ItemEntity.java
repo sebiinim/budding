@@ -25,6 +25,8 @@ public class ItemEntity {
     @Column(nullable = false)
     private String name;
 
+    private Integer price;
+
     private String imageUrl;
 
     private LocalDateTime createdAt;

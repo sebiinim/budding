@@ -7,7 +7,7 @@ import lombok.*;
 @Builder
 public class UserPointResponseDto {
 
-    private Integer userId;
+    private Long userId;
 
     private Integer points;
 }

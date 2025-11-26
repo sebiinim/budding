@@ -1,5 +1,6 @@
 package kr.ac.korea.budding.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
 import kr.ac.korea.budding.dto.AvatarRequestDto;
 import kr.ac.korea.budding.dto.AvatarResponseDto;
 import kr.ac.korea.budding.dto.UserResponseDto;
@@ -15,12 +16,14 @@ public class AvatarController {
     private final AvatarService avatarService;
 
     @PostMapping("/{userId}/setAvatar")
-    public AvatarResponseDto setAvatar(@PathVariable Integer userId, @RequestBody AvatarRequestDto dto) {
+    @Operation(summary = "내 아바타 설정하기, items랑 좀 꼬였어서 로직 변경 예정")
+    public AvatarResponseDto setAvatar(@PathVariable Long userId, @RequestBody AvatarRequestDto dto) {
         return avatarService.setAvatar(userId, dto);
     }
 
     @GetMapping("/{userId}/getAvatar")
-    public AvatarResponseDto getAvatar(@PathVariable Integer userId) {
+    @Operation(summary = "내 아바타 확인하기, items랑 좀 꼬였어서 로직 변경 예정")
+    public AvatarResponseDto getAvatar(@PathVariable Long userId) {
         return avatarService.getAvatarByUserId(userId);
     }
 }

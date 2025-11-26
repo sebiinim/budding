@@ -10,7 +10,7 @@ import java.util.Date;
 @Getter
 @Builder
 public class ChallengeResponseDto {
-    private Integer id;
+    private Long id;
     private String name;
     private String category;
     private Date startDate;

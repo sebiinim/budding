@@ -1,5 +1,6 @@
 package kr.ac.korea.budding.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
 import kr.ac.korea.budding.service.HelloService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,6 +14,7 @@ public class HelloController {
     private final HelloService helloService;
 
     @GetMapping("/")
+    @Operation(summary = "안녕하세요!!")
     public String sayHello() {
         return helloService.sayHello();
     }

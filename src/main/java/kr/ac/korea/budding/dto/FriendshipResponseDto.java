@@ -12,11 +12,11 @@ import java.time.LocalDateTime;
 @Setter
 public class FriendshipResponseDto {
 
-    private Integer id;
+    private Long id;
 
-    private Integer user1Id;
+    private Long user1Id;
 
-    private Integer user2Id;
+    private Long user2Id;
 
     private FriendshipStatus status;
 

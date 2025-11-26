@@ -21,8 +21,9 @@ public class AvatarService {
     private final AvatarMapper avatarMapper;
 
     // 아바타 설정
+    // Todo: 구매한 아이템으로만 할 수 있게
     @Transactional
-    public AvatarResponseDto setAvatar(Integer userId, AvatarRequestDto req) {
+    public AvatarResponseDto setAvatar(Long userId, AvatarRequestDto req) {
 
         UserEntity user = userRepository.findById(userId)
                 .orElseThrow(() -> new RuntimeException(String.format("user with id: %d not found", userId)));
@@ -41,8 +42,9 @@ public class AvatarService {
     }
 
     // userId로 avatar 얻기
+    // todo: userItemEntity 사용하도록 변경하기
     @Transactional
-    public AvatarResponseDto getAvatarByUserId(Integer userId) {
+    public AvatarResponseDto getAvatarByUserId(Long userId) {
         UserEntity user = userRepository.findById(userId)
                 .orElseThrow(() -> new RuntimeException(String.format("user with id: %d not found", userId)));
 

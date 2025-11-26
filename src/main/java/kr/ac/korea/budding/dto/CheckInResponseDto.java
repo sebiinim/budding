@@ -13,7 +13,7 @@ public class CheckInResponseDto {
 
     private Long id;
 
-    private Integer user_id;
+    private Long user_id;
 
     private LocalDate date;
 

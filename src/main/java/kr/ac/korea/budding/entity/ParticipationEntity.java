@@ -17,7 +17,7 @@ public class ParticipationEntity {
 
     @Id
     @GeneratedValue
-    private Integer id;
+    private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
     private UserEntity user;

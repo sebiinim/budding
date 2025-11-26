@@ -1,5 +1,6 @@
 package kr.ac.korea.budding.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
 import kr.ac.korea.budding.dto.UserPointResponseDto;
 import kr.ac.korea.budding.service.PointService;
 import lombok.Getter;
@@ -17,8 +18,9 @@ public class PointController {
     private final PointService pointService;
 
     @GetMapping("/{userId}")
+    @Operation(summary = "유저의 포인트 확인하기")
     public UserPointResponseDto getUserPoint(
-            @PathVariable Integer userId
+            @PathVariable Long userId
     ) {
         return  pointService.getUserPoint(userId);
     }

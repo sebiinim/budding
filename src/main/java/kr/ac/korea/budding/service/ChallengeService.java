@@ -29,7 +29,7 @@ public class ChallengeService {
 
     // 챌린지 만들기
     @Transactional
-    public ChallengeResponseDto createChallenge(ChallengeRequestDto req, Integer userId) {
+    public ChallengeResponseDto createChallenge(ChallengeRequestDto req, Long userId) {
         UserEntity user = userRepository.findById(userId)
             .orElseThrow(() -> new RuntimeException(String.format("user with id: %d not found", userId))
         );
@@ -52,7 +52,7 @@ public class ChallengeService {
 
     // 내 챌린지 보기
     @Transactional
-    public List<ChallengeResponseDto> getMyChallenges(Integer userId, ParticipationStatus status) {
+    public List<ChallengeResponseDto> getMyChallenges(Long userId, ParticipationStatus status) {
         UserEntity user = userRepository.findById(userId)
                 .orElseThrow(() -> new RuntimeException(String.format("user with id: %d not found", userId))
         );

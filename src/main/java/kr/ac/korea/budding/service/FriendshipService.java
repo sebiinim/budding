@@ -27,11 +27,11 @@ public class FriendshipService {
 
     // 친구 등록
     @Transactional
-    public FriendshipResponseDto createFriendship(Integer user1_id, Integer user2_id) {
+    public FriendshipResponseDto createFriendship(Long user1_id, Long user2_id) {
 
         // 유저 번호 정렬, user1_id < user2_id
-        Integer minId = Math.min(user1_id, user2_id);
-        Integer maxId = Math.max(user1_id, user2_id);
+        Long minId = Math.min(user1_id, user2_id);
+        Long maxId = Math.max(user1_id, user2_id);
 
         // 자기 자신과는 친구 추가 불가
         if (minId.equals(maxId)) {
@@ -66,7 +66,7 @@ public class FriendshipService {
 
     // 내 친구 조회
     @Transactional
-    public List<UserResponseDto> findMyFriends(Integer userId) {
+    public List<UserResponseDto> findMyFriends(Long userId) {
         List<FriendshipEntity> friends = friendshipRepository.findByUser1IdOrUser2Id(userId, userId);
 
         // 상대방만 뽑아서 List로 만든다.

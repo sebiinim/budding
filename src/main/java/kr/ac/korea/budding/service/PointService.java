@@ -14,7 +14,7 @@ public class PointService {
     private final UserRepository userRepository;
 
     // 내 포인트 조회
-    public UserPointResponseDto getUserPoint(Integer userId) {
+    public UserPointResponseDto getUserPoint(Long userId) {
         UserEntity userEntity = userRepository.findById(userId).orElseThrow(
                 () -> new RuntimeException(String.format("User with id %d not found", userId))
         );
