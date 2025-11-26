@@ -25,7 +25,7 @@ public class AvatarService {
     public AvatarResponseDto setAvatar(Integer userId, AvatarRequestDto req) {
 
         UserEntity user = userRepository.findById(userId)
-                .orElseThrow(() -> new RuntimeException(String.format("user id: %s not found", userId)));
+                .orElseThrow(() -> new RuntimeException(String.format("user id: %d not found", userId)));
 
         AvatarEntity avatar = user.getAvatar();
 

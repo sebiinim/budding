@@ -9,7 +9,6 @@ import kr.ac.korea.budding.entity.UserEntity;
 import kr.ac.korea.budding.mapper.UserMapper;
 import kr.ac.korea.budding.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
-import org.hibernate.sql.exec.spi.StandardEntityInstanceResolver;
 import org.springframework.stereotype.Service;
 
 @Service

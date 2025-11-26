@@ -10,6 +10,7 @@ import java.util.Date;
 @Getter
 @Setter
 public class ChallengeRequestDto {
+
     @Schema(example="주 3회 헬스장 가기")
     private String name;
 
