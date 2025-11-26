@@ -33,4 +33,5 @@ public class UserEntity {
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "avatar_id", nullable = false)
     private AvatarEntity avatar;
+
 }
