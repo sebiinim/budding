@@ -20,8 +20,7 @@ public class PointService {
         );
 
         return UserPointResponseDto.builder()
-                .userId(userEntity.getId())
-                .points(userEntity.getPoints())
+                .point(userEntity.getPoint())
                 .build();
     }
 }

@@ -6,8 +6,5 @@ import lombok.*;
 @Setter
 @Builder
 public class UserPointResponseDto {
-
-    private Long userId;
-
-    private Integer points;
+    private Integer point;
 }

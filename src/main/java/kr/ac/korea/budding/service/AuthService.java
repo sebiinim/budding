@@ -29,7 +29,7 @@ public class AuthService {
                 .email(req.getEmail())
                 .pw(req.getPw())
                 .nickname(req.getNickname())
-                .points(0)
+                .point(0)
                 .avatar(default_avatar)
                 .build();
 

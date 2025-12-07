@@ -79,8 +79,8 @@ public class ItemService {
                 () -> new RuntimeException(String.format("User with id %d not found", userId))
         );
 
-        if(user.getPoints() >= item.getPrice()) {
-            user.setPoints(user.getPoints() - item.getPrice());
+        if(user.getPoint() >= item.getPrice()) {
+            user.setPoint(user.getPoint() - item.getPrice());
             userRepository.save(user);
 
             UserItemEntity userItem = new UserItemEntity();
@@ -91,7 +91,7 @@ public class ItemService {
             return itemMapper.toDto(item);
         } else {
             throw new RuntimeException(
-                    String.format("points insufficient. point: %d, price: %d", user.getPoints(), item.getPrice())
+                    String.format("point insufficient. point: %d, price: %d", user.getPoint(), item.getPrice())
             );
         }
     };

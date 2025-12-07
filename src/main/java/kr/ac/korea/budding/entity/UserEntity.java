@@ -25,7 +25,7 @@ public class UserEntity {
     private String nickname;
 
     @Column(nullable = false)
-    private Integer points;
+    private Integer point;
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "avatar_id", nullable = false)

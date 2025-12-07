@@ -18,7 +18,7 @@ public class UserResponseDto {
 
     private String nickname;
 
-    private Integer points;
+    private Integer point;
 
     private Boolean dailyCheckInStatus;
 
